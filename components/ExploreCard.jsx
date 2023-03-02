@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import styles from '../styles';
 import { fadeIn } from '../utils/motion';
 
@@ -12,11 +13,15 @@ const ExploreCard = ({ id, imgUrl, index, title, active, handleClick }) => (
     } flex items-center justify-center h-[700px] transition-[flex] duration-75 ease-out-flex cursor-pointer`}
     onClick={() => handleClick(id)}
   >
-    <img
-      src={imgUrl}
-      alt={title}
-      className=" absolute w-full h-full object-cover rounded-[24px]"
-    />
+    <div className=" absolute w-full h-full object-cover rounded-[24px]">
+      <Image
+        src={imgUrl}
+        alt={title}
+        fill={true}
+        className=" absolute w-full h-full object-cover rounded-[24px]"
+      />
+    </div>
+
     {active !== id ? (
       <h3 className=" font-semibold sm:text-[26px] text-[18px] text-white absolute z-0 lg:bottom-20 lg:rotate-[-90deg] lg:origin-[0,0]">
         {title}
@@ -26,11 +31,14 @@ const ExploreCard = ({ id, imgUrl, index, title, active, handleClick }) => (
         <div
           className={`${styles.flexCenter} w-[60px] h-[60px] rounded-[24px] glassmorphism mb-[16px]`}
         >
-          <img
-            src="/headset.svg"
-            alt="headset"
-            className=" w-1/2 h-1/2 object-contain"
-          />
+          <div className="relative  w-1/2 h-1/2">
+            <Image
+              src="/headset.svg"
+              alt="headset"
+              fill={true}
+              className=" w-1/2 h-1/2 object-contain"
+            />
+          </div>
         </div>
         <p className=" font-normal text-[16px] leading-[20px] text-white uppercase">
           Enter the Metaverse

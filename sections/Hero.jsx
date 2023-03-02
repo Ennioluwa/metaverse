@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import styles from '../styles';
 import { slideIn, staggerContainer, textVariant } from '../utils/motion';
 
@@ -31,18 +32,27 @@ const Hero = () => (
         className="relative w-full md:-mt-[20px] -mt-[12px]"
       >
         <div className=" absolute w-full h-[300px] hero-gradient rounded-tl-[140px] z-[0] -top-[30px]" />
-        <img
-          src="/cover.png"
-          alt="cover"
-          className=" w-full sm:h-[500px] h-[350px] object-cover rounded-tl-[140px] z-10 relative"
-        />
+        <div className="relative  w-full sm:h-[500px] h-[350px]">
+          {' '}
+          <Image
+            src="/cover.png"
+            alt="cover"
+            fill
+            className=" object-cover rounded-tl-[140px] z-10 relative"
+          />
+        </div>
+
         <a href="#explore">
           <div className=" w-full flex justify-end sm:-mt-[70px] -mt-[50px] pr-[40px] relative z-10">
-            <img
-              src="/stamp.png"
-              alt="stamp"
-              className=" sm:w-[155px] w-[100px] sm:h-[155px] h-[100px] object-contain"
-            />
+            <div className="relative sm:w-[155px] w-[100px] sm:h-[155px] h-[100px] ">
+              <Image
+                src="/stamp.png"
+                alt="stamp"
+                fill
+                sizes="100px, (min-width: 640px) 155px"
+                className="object-contain"
+              />
+            </div>
           </div>
         </a>
       </motion.div>
