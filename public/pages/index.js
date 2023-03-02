@@ -12,7 +12,7 @@ import {
 
 const Page = () => (
   <div className=" bg-primary-black overflow-hidden">
-    <div className="containter max-w-7xl mx-auto ">
+    <div className="container max-w-7xl mx-auto ">
       <Navbar />
       <Hero />
       <div className=" relative">
