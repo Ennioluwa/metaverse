@@ -17,7 +17,7 @@ const ExploreCard = ({ id, imgUrl, index, title, active, handleClick }) => (
       <Image
         src={imgUrl}
         alt={title}
-        fill={true}
+        fill
         className=" absolute w-full h-full object-cover rounded-[24px]"
       />
     </div>
@@ -35,7 +35,7 @@ const ExploreCard = ({ id, imgUrl, index, title, active, handleClick }) => (
             <Image
               src="/headset.svg"
               alt="headset"
-              fill={true}
+              fill
               className=" w-1/2 h-1/2 object-contain"
             />
           </div>
